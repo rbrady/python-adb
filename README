@@ -5,3 +5,8 @@ Eventually it will be installable via pip.
 
 This project is abstracted from a Django application that interacts with
 Android devices.
+
+Install Requirements:
+
+You need to have the Android SDK installed and on your path according to
+the instructions at http://developer.android.com/sdk/index.html.
