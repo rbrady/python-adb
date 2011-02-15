@@ -1,0 +1,7 @@
+python-adb is an MIT-licensed, open source python library to integrate
+some features from the Android Debug Bridge.
+
+Eventually it will be installable via pip.
+
+This project is abstracted from a Django application that interacts with
+Android devices.
