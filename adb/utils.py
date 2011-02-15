@@ -18,9 +18,27 @@ class AndroidDebugBridge(object):
 	    pass
 	    
 	def attached_devices(self):
+		""" Return a list of attached devices."""
 	    result = self.call_adb("devices")
 	    devices = result.partition('\n')[2].replace('\n', '').split('\tdevice')
 	    return [device for device in devices if len(device) > 2]
+	    
+	def get_state(self):
+		result = self.call_adb("get-state")
+		return result or None
+		
+	def install(self, device_id, path_to_app, **kwargs):
+		# check to see if correct device is connected
+		# ensure path to app exists and is .apk
+		# command = "install"
+		# check for options in kwargs
+		
+		# result = self.call_adb(command)
+		pass
+		
+	
+		
+	
 	    
 	    
 	    
