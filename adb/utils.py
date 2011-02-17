@@ -36,6 +36,26 @@ class AndroidDebugBridge(object):
 		# result = self.call_adb(command)
 		pass
 		
+	def reboot(self, option=):
+		command = "reboot"
+		if len(option) > 7 and option in ("bootloader", "recovery",):
+			command = "%s %s" % (command, option.strip())
+		self.call_adb(command)
+		
+	def push(self, local, remote):
+		result = self.call_adb("push %s %s" % (local, remote))
+		return result
+		
+	def pull(self, remote, local)
+		result = self.call_adb("pull %s %s" % (remote, local))
+		return result
+	
+	def sync(self, directory, **kwargs):
+		command = "sync %s" % directory
+		if 'list' in kwargs:
+			command += " -l"
+		result = self.call_adb(command)
+		return result
 	
 		
 	
