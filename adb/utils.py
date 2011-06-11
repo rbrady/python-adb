@@ -36,7 +36,7 @@ class AndroidDebugBridge(object):
 		# result = self.call_adb(command)
 		pass
 		
-	def reboot(self, option=):
+	def reboot(self, option):
 		command = "reboot"
 		if len(option) > 7 and option in ("bootloader", "recovery",):
 			command = "%s %s" % (command, option.strip())
@@ -46,7 +46,7 @@ class AndroidDebugBridge(object):
 		result = self.call_adb("push %s %s" % (local, remote))
 		return result
 		
-	def pull(self, remote, local)
+	def pull(self, remote, local):
 		result = self.call_adb("pull %s %s" % (remote, local))
 		return result
 	
