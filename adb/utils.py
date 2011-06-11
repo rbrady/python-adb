@@ -25,6 +25,7 @@ class AndroidDebugBridge(object):
 	    
 	def get_state(self):
 		result = self.call_adb("get-state")
+                result = result.strip(' \t\n\r')
 		return result or None
 		
 	def install(self, device_id, path_to_app, **kwargs):
