@@ -25,6 +25,7 @@ class AndroidDebugBridge(object):
 	    
 	def get_state(self):
 		result = self.call_adb("get-state")
+                result = result.strip(' \t\n\r')
 		return result or None
 		
 	def install(self, device_id, path_to_app, **kwargs):
@@ -36,7 +37,7 @@ class AndroidDebugBridge(object):
 		# result = self.call_adb(command)
 		pass
 		
-	def reboot(self, option=):
+	def reboot(self, option):
 		command = "reboot"
 		if len(option) > 7 and option in ("bootloader", "recovery",):
 			command = "%s %s" % (command, option.strip())
@@ -46,7 +47,7 @@ class AndroidDebugBridge(object):
 		result = self.call_adb("push %s %s" % (local, remote))
 		return result
 		
-	def pull(self, remote, local)
+	def pull(self, remote, local):
 		result = self.call_adb("pull %s %s" % (remote, local))
 		return result
 	
