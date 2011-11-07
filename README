@@ -1,3 +1,6 @@
+*** NOTE:   I have a local branch that is a complete rewrite and will be checked in Nov 2011 ***
+
+
 python-adb is an MIT-licensed, open source python library to integrate
 some features from the Android Debug Bridge.
 
